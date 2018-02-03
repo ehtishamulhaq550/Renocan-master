@@ -23,6 +23,14 @@ namespace Renocan.App_Start
             CreateMap<Bookmark, BookmarkDto>();
 
             CreateMap<BookmarkDto, Bookmark>().ForMember(m => m.Bookmark_ID, opt => opt.Ignore());
+
+
+
+
+            CreateMap<Company_Service_Location, Company_Service_LocationDto>();
+
+            CreateMap<Company_Service_LocationDto, Company_Service_Location>().ForMember(m => m.Company_Service_Location_Id, opt => opt.Ignore());
+
         }
     }
 }
