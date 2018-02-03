@@ -198,11 +198,13 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\Api\Admin_SignupController.cs" />
+    <Compile Include="Controllers\Api\BookmarkController.cs" />
     <Compile Include="Controllers\Api\Client_SignupController.cs" />
     <Compile Include="Controllers\Client_SignupController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Dtos\Admin_SignupDto.cs" />
+    <Compile Include="Dtos\BookmarkDto.cs" />
     <Compile Include="Dtos\Client_SignupDto.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

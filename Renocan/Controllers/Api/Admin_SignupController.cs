@@ -14,6 +14,7 @@ namespace Renocan.Controllers.Api
     {
 
 
+
         private Renocan_DbContext context;
 
         public Admin_SignupController()
@@ -57,13 +58,8 @@ namespace Renocan.Controllers.Api
             var admin = context.Admin_Signup.SingleOrDefault(c => c.Admin_ID == id);
             if (admin == null)
                 throw new HttpResponseException(HttpStatusCode.NotFound);
-            Mapper.Map<Admin_SignupDto, Admin_Signup>(admin_SignupDto,admin);
-            admin.Admin_Name = admin_SignupDto.Admin_Name;
-            admin.Admin_Contact_Number = admin_SignupDto.Admin_Contact_Number;
-            admin.Admin_Address = admin_SignupDto.Admin_Address;
-            admin.Admin_Designation = admin_SignupDto.Admin_Designation;
-            admin.Admin_Employee_ID = admin_SignupDto.Admin_Employee_ID;
-            admin.Admin_Password = admin_SignupDto.Admin_Password;
+            Mapper.Map(admin_SignupDto,admin);
+
             context.SaveChanges();
    
         }

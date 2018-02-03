@@ -19,6 +19,10 @@ namespace Renocan.App_Start
             CreateMap<Admin_Signup, Admin_SignupDto>();
 
             CreateMap<Admin_SignupDto, Admin_Signup>().ForMember(m => m.Admin_ID, opt => opt.Ignore());
+
+            CreateMap<Bookmark, BookmarkDto>();
+
+            CreateMap<BookmarkDto, Bookmark>().ForMember(m => m.Bookmark_ID, opt => opt.Ignore());
         }
     }
 }
