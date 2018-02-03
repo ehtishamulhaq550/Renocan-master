@@ -1,0 +1,1039 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Renocan_DbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Activity">
+          <Key>
+            <PropertyRef Name="Activity_ID" />
+          </Key>
+          <Property Name="Activity_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Activity_Date" Type="date" />
+          <Property Name="Reviews_Commented" Type="nvarchar(max)" />
+          <Property Name="Ratings" Type="int" />
+          <Property Name="Company_ID" Type="int" />
+          <Property Name="Targeted_Company" Type="int" />
+          <Property Name="Creation_By" Type="nvarchar" MaxLength="50" />
+          <Property Name="Creation_Date" Type="datetime" />
+          <Property Name="Updated_By" Type="nvarchar" MaxLength="50" />
+          <Property Name="Updated_Date" Type="datetime" />
+          <Property Name="Is_Active" Type="bit" />
+          <Property Name="Ip" Type="varbinary" MaxLength="16" />
+        </EntityType>
+        <EntityType Name="Admin_Signup">
+          <Key>
+            <PropertyRef Name="Admin_ID" />
+          </Key>
+          <Property Name="Admin_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Admin_Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Admin_Designation" Type="nvarchar" MaxLength="50" />
+          <Property Name="Admin_Employee_ID" Type="int" />
+          <Property Name="Admin_Contact_Number" Type="nvarchar" MaxLength="15" />
+          <Property Name="Admin_Address" Type="nvarchar" MaxLength="50" />
+          <Property Name="User_CategoryId" Type="int" />
+          <Property Name="Admin_Password" Type="nvarchar" MaxLength="50" />
+          <Property Name="Creation_By" Type="nvarchar" MaxLength="50" />
+          <Property Name="Creation_Date" Type="datetime" />
+          <Property Name="Updated_By" Type="nvarchar" MaxLength="50" />
+          <Property Name="Updated_Date" Type="datetime" />
+          <Property Name="Is_Active" Type="bit" />
+          <Property Name="Ip" Type="varbinary" MaxLength="16" />
+        </EntityType>
+        <EntityType Name="Bookmarks">
+          <Key>
+            <PropertyRef Name="Bookmark_ID" />
+          </Key>
+          <Property Name="Bookmark_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="User_ID" Type="int" />
+          <Property Name="User_TypeId" Type="int" />
+          <Property Name="Company_ID" Type="int" />
+          <Property Name="Creation_By" Type="nvarchar" MaxLength="50" />
+          <Property Name="Creation_Date" Type="datetime" />
+          <Property Name="Updated_By" Type="nvarchar" MaxLength="50" />
+          <Property Name="Updated_Date" Type="datetime" />
+          <Property Name="Is_Active" Type="bit" />
+          <Property Name="Ip" Type="varbinary" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Client_Signup">
+          <Key>
+            <PropertyRef Name="Client_ID" />
+          </Key>
+          <Property Name="Client_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Full_Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="First_Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Last_Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="City" Type="nvarchar" MaxLength="50" />
+          <Property Name="State" Type="nvarchar" MaxLength="50" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="Password" Type="nvarchar" MaxLength="50" />
+          <Property Name="Phone" Type="nvarchar" MaxLength="15" />
+          <Property Name="IsNewsletter" Type="nvarchar" MaxLength="50" />
+          <Property Name="Creation_By" Type="nvarchar" MaxLength="50" />
+          <Property Name="Creation_Date" Type="datetime" />
+          <Property Name="Updated_By" Type="nvarchar" MaxLength="50" />
+          <Property Name="Updated_Date" Type="datetime" />
+          <Property Name="Is_Active" Type="bit" />
+          <Property Name="Ip" Type="varbinary" MaxLength="16" />
+        </EntityType>
+        <EntityType Name="Company_Service_Location">
+          <Key>
+            <PropertyRef Name="Company_Service_Location_Id" />
+          </Key>
+          <Property Name="Company_Service_Location_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Company_ID" Type="int" />
+          <Property Name="Location_ID" Type="int" />
+          <Property Name="Creation_By" Type="nvarchar" MaxLength="50" />
+          <Property Name="Creation_Date" Type="datetime" />
+          <Property Name="Updated_By" Type="nvarchar" MaxLength="50" />
+          <Property Name="Updated_Date" Type="datetime" />
+          <Property Name="Is_Active" Type="bit" />
+          <Property Name="Ip" Type="varbinary" MaxLength="16" />
+        </EntityType>
+        <EntityType Name="Image_Gallary">
+          <Key>
+            <PropertyRef Name="Image_ID" />
+          </Key>
+          <Property Name="Image_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Image_Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Image_Path" Type="nvarchar" MaxLength="50" />
+          <Property Name="User_ID" Type="int" />
+          <Property Name="Image_Type_ID" Type="int" />
+          <Property Name="User_Typeid" Type="int" />
+          <Property Name="Creation_By" Type="nvarchar" MaxLength="50" />
+          <Property Name="Creation_Date" Type="datetime" />
+          <Property Name="Updated_By" Type="nvarchar" MaxLength="50" />
+          <Property Name="Updated_Date" Type="datetime" />
+          <Property Name="Is_Active" Type="bit" />
+          <Property Name="Ip" Type="varbinary" MaxLength="16" />
+        </EntityType>
+        <EntityType Name="Image_Type">
+          <Key>
+            <PropertyRef Name="Image_Type_ID" />
+          </Key>
+          <Property Name="Image_Type_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Image_Type_Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Creation_By" Type="nvarchar" MaxLength="50" />
+          <Property Name="Creation_Date" Type="datetime" />
+          <Property Name="Updated_By" Type="nvarchar" MaxLength="50" />
+          <Property Name="Updated_Date" Type="datetime" />
+          <Property Name="Is_Active" Type="bit" />
+          <Property Name="Ip" Type="varbinary" MaxLength="16" />
+        </EntityType>
+        <EntityType Name="Location">
+          <Key>
+            <PropertyRef Name="Location_ID" />
+          </Key>
+          <Property Name="Location_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Location_Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Postal_Code" Type="nvarchar" MaxLength="50" />
+          <Property Name="Creation_By" Type="nvarchar" MaxLength="50" />
+          <Property Name="Creation_Date" Type="datetime" />
+          <Property Name="Updated_By" Type="nvarchar" MaxLength="50" />
+          <Property Name="Updated_Date" Type="datetime" />
+          <Property Name="Is_Active" Type="bit" />
+          <Property Name="Ip" Type="varbinary" MaxLength="16" />
+        </EntityType>
+        <EntityType Name="Registration_Company">
+          <Key>
+            <PropertyRef Name="Company_ID" />
+          </Key>
+          <Property Name="Company_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CompanyName" Type="nvarchar" MaxLength="50" />
+          <Property Name="PostalCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="PhoneNumber" Type="nvarchar" MaxLength="15" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="Password" Type="nvarchar" MaxLength="50" />
+          <Property Name="Owner_First_Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Owner_Last_Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="IsAggrement" Type="bit" />
+          <Property Name="Is_Paid" Type="bit" />
+          <Property Name="Website_Add" Type="nvarchar" MaxLength="50" />
+          <Property Name="Bussiness_Description" Type="nvarchar(max)" />
+          <Property Name="Profile_Information" Type="nvarchar(max)" />
+          <Property Name="Products" Type="nvarchar(max)" />
+          <Property Name="Services" Type="nvarchar(max)" />
+          <Property Name="Brands" Type="nvarchar(max)" />
+          <Property Name="Specialities" Type="nvarchar(max)" />
+          <Property Name="Year_Established" Type="nvarchar" MaxLength="50" />
+          <Property Name="Return_Policy_URL" Type="nvarchar" MaxLength="50" />
+          <Property Name="Payment_Method_URL" Type="nvarchar" MaxLength="50" />
+          <Property Name="Licences_URL" Type="nvarchar(max)" />
+          <Property Name="Insurance_URL" Type="nvarchar" MaxLength="50" />
+          <Property Name="Certificates_URL" Type="nvarchar" MaxLength="50" />
+          <Property Name="Pricing" Type="nvarchar" MaxLength="50" />
+          <Property Name="Contract_Based" Type="nvarchar" MaxLength="50" />
+          <Property Name="Warranty" Type="nvarchar" MaxLength="50" />
+          <Property Name="Creation_By" Type="nvarchar" MaxLength="50" />
+          <Property Name="Creation_Date" Type="datetime" />
+          <Property Name="Updated_By" Type="nvarchar" MaxLength="50" />
+          <Property Name="Updated_Date" Type="datetime" />
+          <Property Name="Is_Active" Type="bit" />
+          <Property Name="Ip" Type="varbinary" MaxLength="16" />
+        </EntityType>
+        <EntityType Name="Request_Review_History">
+          <Key>
+            <PropertyRef Name="Request_Review_History_ID" />
+          </Key>
+          <Property Name="Request_Review_History_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Review_ID" Type="int" />
+          <Property Name="Job_Description" Type="nvarchar" MaxLength="50" />
+          <Property Name="Client_Phone" Type="nvarchar" MaxLength="15" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="IsEmailSent" Type="bit" />
+          <Property Name="IsSmsSent" Type="bit" />
+          <Property Name="Creation_By" Type="nvarchar" MaxLength="50" />
+          <Property Name="Creation_Date" Type="datetime" />
+          <Property Name="Updated_By" Type="nvarchar" MaxLength="50" />
+          <Property Name="Updated_Date" Type="datetime" />
+          <Property Name="Is_Active" Type="bit" />
+          <Property Name="Ip" Type="varbinary" MaxLength="16" />
+        </EntityType>
+        <EntityType Name="Reviews">
+          <Key>
+            <PropertyRef Name="Review_ID" />
+          </Key>
+          <Property Name="Review_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Service_Request_ID" Type="int" />
+          <Property Name="ReviewedBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="ReviewedDate" Type="date" />
+          <Property Name="Service_Review_Status_ID" Type="int" />
+          <Property Name="Review_Title" Type="nvarchar" MaxLength="50" />
+          <Property Name="Approximate_Cost" Type="nvarchar" MaxLength="50" />
+          <Property Name="Review_Details" Type="nvarchar(max)" />
+          <Property Name="Review_Rating" Type="int" />
+          <Property Name="Review_Time" Type="time" Precision="7" />
+          <Property Name="IsAnonymous" Type="bit" />
+          <Property Name="Creation_By" Type="nvarchar" MaxLength="50" />
+          <Property Name="Creation_Date" Type="datetime" />
+          <Property Name="Updated_By" Type="nvarchar" MaxLength="50" />
+          <Property Name="Updated_Date" Type="datetime" />
+          <Property Name="Is_Active" Type="bit" />
+          <Property Name="Ip" Type="varbinary" MaxLength="16" />
+        </EntityType>
+        <EntityType Name="Scoreboard">
+          <Key>
+            <PropertyRef Name="Scoreboard_ID" />
+          </Key>
+          <Property Name="Scoreboard_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Visitor_ID" Type="int" />
+          <Property Name="Visitor_Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Visitor_Ip" Type="varbinary" MaxLength="16" />
+          <Property Name="Leads" Type="nvarchar" MaxLength="50" />
+          <Property Name="Company_ID" Type="int" />
+          <Property Name="Creation_By" Type="nvarchar" MaxLength="50" />
+          <Property Name="Creation_Date" Type="datetime" />
+          <Property Name="Updated_By" Type="nvarchar" MaxLength="50" />
+          <Property Name="Updated_Date" Type="datetime" />
+          <Property Name="Is_Active" Type="bit" />
+          <Property Name="Ip" Type="varbinary" MaxLength="16" />
+        </EntityType>
+        <EntityType Name="Service_Category">
+          <Key>
+            <PropertyRef Name="Category_ID" />
+          </Key>
+          <Property Name="Category_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CategoryName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Creation_By" Type="nvarchar" MaxLength="50" />
+          <Property Name="Creation_Date" Type="datetime" />
+          <Property Name="Updated_By" Type="nvarchar" MaxLength="50" />
+          <Property Name="Updated_Date" Type="datetime" />
+          <Property Name="Is_Active" Type="bit" />
+          <Property Name="Ip" Type="varbinary" MaxLength="16" />
+        </EntityType>
+        <EntityType Name="Service_Request">
+          <Key>
+            <PropertyRef Name="Service_Request_ID" />
+          </Key>
+          <Property Name="Service_Request_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="User_ID" Type="int" />
+          <Property Name="User_TypeId" Type="int" />
+          <Property Name="Company_Category_ID" Type="int" />
+          <Property Name="Service_Request_Status_ID" Type="int" Nullable="false" />
+          <Property Name="Request_Date" Type="datetime" />
+          <Property Name="Request_Reply" Type="nvarchar" MaxLength="50" />
+          <Property Name="Problem_description" Type="nvarchar" MaxLength="50" />
+          <Property Name="Kind_of_Location" Type="nvarchar" MaxLength="50" />
+          <Property Name="Postal_Code" Type="nvarchar" MaxLength="50" />
+          <Property Name="Creation_By" Type="nvarchar" MaxLength="50" />
+          <Property Name="Creation_Date" Type="datetime" />
+          <Property Name="Updated_By" Type="nvarchar" MaxLength="50" />
+          <Property Name="Updated_Date" Type="datetime" />
+          <Property Name="Is_Active" Type="bit" />
+          <Property Name="Ip" Type="varbinary" MaxLength="16" />
+        </EntityType>
+        <EntityType Name="Service_Request_Status">
+          <Key>
+            <PropertyRef Name="Service_Request_Status_ID" />
+          </Key>
+          <Property Name="Service_Request_Status_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Service_Request_Status_Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Creation_By" Type="nvarchar" MaxLength="50" />
+          <Property Name="Creation_Date" Type="datetime" />
+          <Property Name="Updated_By" Type="nvarchar" MaxLength="50" />
+          <Property Name="Updated_Date" Type="datetime" />
+          <Property Name="Is_Active" Type="bit" />
+          <Property Name="Ip" Type="varbinary" MaxLength="16" />
+        </EntityType>
+        <EntityType Name="Service_Review_Status">
+          <Key>
+            <PropertyRef Name="Service_Review_Status_ID" />
+          </Key>
+          <Property Name="Service_Review_Status_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Service_Review_Status" Type="nvarchar" MaxLength="50" />
+          <Property Name="Creation_By" Type="nvarchar" MaxLength="50" />
+          <Property Name="Creation_Date" Type="datetime" />
+          <Property Name="Updated_By" Type="nvarchar" MaxLength="50" />
+          <Property Name="Updated_Date" Type="datetime" />
+          <Property Name="Is_Active" Type="bit" />
+          <Property Name="Ip" Type="varbinary" MaxLength="16" />
+        </EntityType>
+        <EntityType Name="User_Type">
+          <Key>
+            <PropertyRef Name="User_TypeId" />
+          </Key>
+          <Property Name="User_TypeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="User_TypeName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Creation_By" Type="nvarchar" MaxLength="50" />
+          <Property Name="Creation_Date" Type="datetime" />
+          <Property Name="Updated_By" Type="nvarchar" MaxLength="50" />
+          <Property Name="Updated_Date" Type="datetime" />
+          <Property Name="Is_Active" Type="bit" />
+          <Property Name="Ip" Type="varbinary" MaxLength="16" />
+        </EntityType>
+        <EntityType Name="VIisitor_Log">
+          <Key>
+            <PropertyRef Name="User_Log_ID" />
+          </Key>
+          <Property Name="User_Log_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Date" Type="date" />
+          <Property Name="Time_In" Type="time" Precision="7" />
+          <Property Name="Time_Out" Type="time" Precision="7" />
+          <Property Name="Company_ID" Type="int" />
+          <Property Name="Creation_By" Type="nvarchar" MaxLength="50" />
+          <Property Name="Creation_Date" Type="datetime" />
+          <Property Name="Updated_By" Type="nvarchar" MaxLength="50" />
+          <Property Name="Updated_Date" Type="datetime" />
+          <Property Name="Is_Active" Type="bit" />
+          <Property Name="Ip" Type="varbinary" MaxLength="16" />
+        </EntityType>
+        <EntityContainer Name="Renocan_DbModelStoreContainer">
+          <EntitySet Name="Activity" EntityType="Self.Activity" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Admin_Signup" EntityType="Self.Admin_Signup" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Bookmarks" EntityType="Self.Bookmarks" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Client_Signup" EntityType="Self.Client_Signup" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Company_Service_Location" EntityType="Self.Company_Service_Location" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Image_Gallary" EntityType="Self.Image_Gallary" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Image_Type" EntityType="Self.Image_Type" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Location" EntityType="Self.Location" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Registration_Company" EntityType="Self.Registration_Company" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Request_Review_History" EntityType="Self.Request_Review_History" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Reviews" EntityType="Self.Reviews" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Scoreboard" EntityType="Self.Scoreboard" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Service_Category" EntityType="Self.Service_Category" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Service_Request" EntityType="Self.Service_Request" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Service_Request_Status" EntityType="Self.Service_Request_Status" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Service_Review_Status" EntityType="Self.Service_Review_Status" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="User_Type" EntityType="Self.User_Type" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="VIisitor_Log" EntityType="Self.VIisitor_Log" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Renocan_DbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Activity">
+          <Key>
+            <PropertyRef Name="Activity_ID" />
+          </Key>
+          <Property Name="Activity_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Activity_Date" Type="DateTime" Precision="0" />
+          <Property Name="Reviews_Commented" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Ratings" Type="Int32" />
+          <Property Name="Company_ID" Type="Int32" />
+          <Property Name="Targeted_Company" Type="Int32" />
+          <Property Name="Creation_By" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Creation_Date" Type="DateTime" Precision="3" />
+          <Property Name="Updated_By" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Updated_Date" Type="DateTime" Precision="3" />
+          <Property Name="Is_Active" Type="Boolean" />
+          <Property Name="Ip" Type="Binary" MaxLength="16" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Admin_Signup">
+          <Key>
+            <PropertyRef Name="Admin_ID" />
+          </Key>
+          <Property Name="Admin_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Admin_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Admin_Designation" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Admin_Employee_ID" Type="Int32" />
+          <Property Name="Admin_Contact_Number" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="Admin_Address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="User_CategoryId" Type="Int32" />
+          <Property Name="Admin_Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Creation_By" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Creation_Date" Type="DateTime" Precision="3" />
+          <Property Name="Updated_By" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Updated_Date" Type="DateTime" Precision="3" />
+          <Property Name="Is_Active" Type="Boolean" />
+          <Property Name="Ip" Type="Binary" MaxLength="16" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Bookmark">
+          <Key>
+            <PropertyRef Name="Bookmark_ID" />
+          </Key>
+          <Property Name="Bookmark_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="User_ID" Type="Int32" />
+          <Property Name="User_TypeId" Type="Int32" />
+          <Property Name="Company_ID" Type="Int32" />
+          <Property Name="Creation_By" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Creation_Date" Type="DateTime" Precision="3" />
+          <Property Name="Updated_By" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Updated_Date" Type="DateTime" Precision="3" />
+          <Property Name="Is_Active" Type="Boolean" />
+          <Property Name="Ip" Type="Binary" MaxLength="50" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Client_Signup">
+          <Key>
+            <PropertyRef Name="Client_ID" />
+          </Key>
+          <Property Name="Client_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Full_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="First_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Last_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="State" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Phone" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="IsNewsletter" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Creation_By" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Creation_Date" Type="DateTime" Precision="3" />
+          <Property Name="Updated_By" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Updated_Date" Type="DateTime" Precision="3" />
+          <Property Name="Is_Active" Type="Boolean" />
+          <Property Name="Ip" Type="Binary" MaxLength="16" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Company_Service_Location">
+          <Key>
+            <PropertyRef Name="Company_Service_Location_Id" />
+          </Key>
+          <Property Name="Company_Service_Location_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Company_ID" Type="Int32" />
+          <Property Name="Location_ID" Type="Int32" />
+          <Property Name="Creation_By" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Creation_Date" Type="DateTime" Precision="3" />
+          <Property Name="Updated_By" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Updated_Date" Type="DateTime" Precision="3" />
+          <Property Name="Is_Active" Type="Boolean" />
+          <Property Name="Ip" Type="Binary" MaxLength="16" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Image_Gallary">
+          <Key>
+            <PropertyRef Name="Image_ID" />
+          </Key>
+          <Property Name="Image_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Image_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Image_Path" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="User_ID" Type="Int32" />
+          <Property Name="Image_Type_ID" Type="Int32" />
+          <Property Name="User_Typeid" Type="Int32" />
+          <Property Name="Creation_By" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Creation_Date" Type="DateTime" Precision="3" />
+          <Property Name="Updated_By" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Updated_Date" Type="DateTime" Precision="3" />
+          <Property Name="Is_Active" Type="Boolean" />
+          <Property Name="Ip" Type="Binary" MaxLength="16" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Image_Type">
+          <Key>
+            <PropertyRef Name="Image_Type_ID" />
+          </Key>
+          <Property Name="Image_Type_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Image_Type_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Creation_By" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Creation_Date" Type="DateTime" Precision="3" />
+          <Property Name="Updated_By" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Updated_Date" Type="DateTime" Precision="3" />
+          <Property Name="Is_Active" Type="Boolean" />
+          <Property Name="Ip" Type="Binary" MaxLength="16" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Location">
+          <Key>
+            <PropertyRef Name="Location_ID" />
+          </Key>
+          <Property Name="Location_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Location_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Postal_Code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Creation_By" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Creation_Date" Type="DateTime" Precision="3" />
+          <Property Name="Updated_By" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Updated_Date" Type="DateTime" Precision="3" />
+          <Property Name="Is_Active" Type="Boolean" />
+          <Property Name="Ip" Type="Binary" MaxLength="16" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Registration_Company">
+          <Key>
+            <PropertyRef Name="Company_ID" />
+          </Key>
+          <Property Name="Company_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CompanyName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PostalCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneNumber" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Owner_First_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Owner_Last_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IsAggrement" Type="Boolean" />
+          <Property Name="Is_Paid" Type="Boolean" />
+          <Property Name="Website_Add" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Bussiness_Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Profile_Information" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Products" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Services" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Brands" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Specialities" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Year_Established" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Return_Policy_URL" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Payment_Method_URL" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Licences_URL" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Insurance_URL" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Certificates_URL" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Pricing" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Contract_Based" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Warranty" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Creation_By" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Creation_Date" Type="DateTime" Precision="3" />
+          <Property Name="Updated_By" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Updated_Date" Type="DateTime" Precision="3" />
+          <Property Name="Is_Active" Type="Boolean" />
+          <Property Name="Ip" Type="Binary" MaxLength="16" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Request_Review_History">
+          <Key>
+            <PropertyRef Name="Request_Review_History_ID" />
+          </Key>
+          <Property Name="Request_Review_History_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Review_ID" Type="Int32" />
+          <Property Name="Job_Description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Client_Phone" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IsEmailSent" Type="Boolean" />
+          <Property Name="IsSmsSent" Type="Boolean" />
+          <Property Name="Creation_By" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Creation_Date" Type="DateTime" Precision="3" />
+          <Property Name="Updated_By" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Updated_Date" Type="DateTime" Precision="3" />
+          <Property Name="Is_Active" Type="Boolean" />
+          <Property Name="Ip" Type="Binary" MaxLength="16" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Review">
+          <Key>
+            <PropertyRef Name="Review_ID" />
+          </Key>
+          <Property Name="Review_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Service_Request_ID" Type="Int32" />
+          <Property Name="ReviewedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ReviewedDate" Type="DateTime" Precision="0" />
+          <Property Name="Service_Review_Status_ID" Type="Int32" />
+          <Property Name="Review_Title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Approximate_Cost" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Review_Details" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Review_Rating" Type="Int32" />
+          <Property Name="Review_Time" Type="Time" Precision="7" />
+          <Property Name="IsAnonymous" Type="Boolean" />
+          <Property Name="Creation_By" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Creation_Date" Type="DateTime" Precision="3" />
+          <Property Name="Updated_By" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Updated_Date" Type="DateTime" Precision="3" />
+          <Property Name="Is_Active" Type="Boolean" />
+          <Property Name="Ip" Type="Binary" MaxLength="16" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Scoreboard">
+          <Key>
+            <PropertyRef Name="Scoreboard_ID" />
+          </Key>
+          <Property Name="Scoreboard_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Visitor_ID" Type="Int32" />
+          <Property Name="Visitor_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Visitor_Ip" Type="Binary" MaxLength="16" FixedLength="false" />
+          <Property Name="Leads" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Company_ID" Type="Int32" />
+          <Property Name="Creation_By" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Creation_Date" Type="DateTime" Precision="3" />
+          <Property Name="Updated_By" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Updated_Date" Type="DateTime" Precision="3" />
+          <Property Name="Is_Active" Type="Boolean" />
+          <Property Name="Ip" Type="Binary" MaxLength="16" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Service_Category">
+          <Key>
+            <PropertyRef Name="Category_ID" />
+          </Key>
+          <Property Name="Category_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CategoryName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Creation_By" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Creation_Date" Type="DateTime" Precision="3" />
+          <Property Name="Updated_By" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Updated_Date" Type="DateTime" Precision="3" />
+          <Property Name="Is_Active" Type="Boolean" />
+          <Property Name="Ip" Type="Binary" MaxLength="16" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Service_Request">
+          <Key>
+            <PropertyRef Name="Service_Request_ID" />
+          </Key>
+          <Property Name="Service_Request_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="User_ID" Type="Int32" />
+          <Property Name="User_TypeId" Type="Int32" />
+          <Property Name="Company_Category_ID" Type="Int32" />
+          <Property Name="Service_Request_Status_ID" Type="Int32" Nullable="false" />
+          <Property Name="Request_Date" Type="DateTime" Precision="3" />
+          <Property Name="Request_Reply" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Problem_description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Kind_of_Location" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Postal_Code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Creation_By" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Creation_Date" Type="DateTime" Precision="3" />
+          <Property Name="Updated_By" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Updated_Date" Type="DateTime" Precision="3" />
+          <Property Name="Is_Active" Type="Boolean" />
+          <Property Name="Ip" Type="Binary" MaxLength="16" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Service_Request_Status">
+          <Key>
+            <PropertyRef Name="Service_Request_Status_ID" />
+          </Key>
+          <Property Name="Service_Request_Status_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Service_Request_Status_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Creation_By" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Creation_Date" Type="DateTime" Precision="3" />
+          <Property Name="Updated_By" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Updated_Date" Type="DateTime" Precision="3" />
+          <Property Name="Is_Active" Type="Boolean" />
+          <Property Name="Ip" Type="Binary" MaxLength="16" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Service_Review_Status">
+          <Key>
+            <PropertyRef Name="Service_Review_Status_ID" />
+          </Key>
+          <Property Name="Service_Review_Status_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Service_Review_Status1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Creation_By" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Creation_Date" Type="DateTime" Precision="3" />
+          <Property Name="Updated_By" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Updated_Date" Type="DateTime" Precision="3" />
+          <Property Name="Is_Active" Type="Boolean" />
+          <Property Name="Ip" Type="Binary" MaxLength="16" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="User_Type">
+          <Key>
+            <PropertyRef Name="User_TypeId" />
+          </Key>
+          <Property Name="User_TypeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="User_TypeName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Creation_By" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Creation_Date" Type="DateTime" Precision="3" />
+          <Property Name="Updated_By" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Updated_Date" Type="DateTime" Precision="3" />
+          <Property Name="Is_Active" Type="Boolean" />
+          <Property Name="Ip" Type="Binary" MaxLength="16" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="VIisitor_Log">
+          <Key>
+            <PropertyRef Name="User_Log_ID" />
+          </Key>
+          <Property Name="User_Log_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Date" Type="DateTime" Precision="0" />
+          <Property Name="Time_In" Type="Time" Precision="7" />
+          <Property Name="Time_Out" Type="Time" Precision="7" />
+          <Property Name="Company_ID" Type="Int32" />
+          <Property Name="Creation_By" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Creation_Date" Type="DateTime" Precision="3" />
+          <Property Name="Updated_By" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Updated_Date" Type="DateTime" Precision="3" />
+          <Property Name="Is_Active" Type="Boolean" />
+          <Property Name="Ip" Type="Binary" MaxLength="16" FixedLength="false" />
+        </EntityType>
+        <EntityContainer Name="Renocan_DbContext" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Activities" EntityType="Self.Activity" />
+          <EntitySet Name="Admin_Signup" EntityType="Self.Admin_Signup" />
+          <EntitySet Name="Bookmarks" EntityType="Self.Bookmark" />
+          <EntitySet Name="Client_Signup" EntityType="Self.Client_Signup" />
+          <EntitySet Name="Company_Service_Location" EntityType="Self.Company_Service_Location" />
+          <EntitySet Name="Image_Gallary" EntityType="Self.Image_Gallary" />
+          <EntitySet Name="Image_Type" EntityType="Self.Image_Type" />
+          <EntitySet Name="Locations" EntityType="Self.Location" />
+          <EntitySet Name="Registration_Company" EntityType="Self.Registration_Company" />
+          <EntitySet Name="Request_Review_History" EntityType="Self.Request_Review_History" />
+          <EntitySet Name="Reviews" EntityType="Self.Review" />
+          <EntitySet Name="Scoreboards" EntityType="Self.Scoreboard" />
+          <EntitySet Name="Service_Category" EntityType="Self.Service_Category" />
+          <EntitySet Name="Service_Request" EntityType="Self.Service_Request" />
+          <EntitySet Name="Service_Request_Status" EntityType="Self.Service_Request_Status" />
+          <EntitySet Name="Service_Review_Status" EntityType="Self.Service_Review_Status" />
+          <EntitySet Name="User_Type" EntityType="Self.User_Type" />
+          <EntitySet Name="VIisitor_Log" EntityType="Self.VIisitor_Log" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Renocan_DbModelStoreContainer" CdmEntityContainer="Renocan_DbContext">
+          <EntitySetMapping Name="Activities">
+            <EntityTypeMapping TypeName="Renocan_DbModel.Activity">
+              <MappingFragment StoreEntitySet="Activity">
+                <ScalarProperty Name="Activity_ID" ColumnName="Activity_ID" />
+                <ScalarProperty Name="Activity_Date" ColumnName="Activity_Date" />
+                <ScalarProperty Name="Reviews_Commented" ColumnName="Reviews_Commented" />
+                <ScalarProperty Name="Ratings" ColumnName="Ratings" />
+                <ScalarProperty Name="Company_ID" ColumnName="Company_ID" />
+                <ScalarProperty Name="Targeted_Company" ColumnName="Targeted_Company" />
+                <ScalarProperty Name="Creation_By" ColumnName="Creation_By" />
+                <ScalarProperty Name="Creation_Date" ColumnName="Creation_Date" />
+                <ScalarProperty Name="Updated_By" ColumnName="Updated_By" />
+                <ScalarProperty Name="Updated_Date" ColumnName="Updated_Date" />
+                <ScalarProperty Name="Is_Active" ColumnName="Is_Active" />
+                <ScalarProperty Name="Ip" ColumnName="Ip" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Admin_Signup">
+            <EntityTypeMapping TypeName="Renocan_DbModel.Admin_Signup">
+              <MappingFragment StoreEntitySet="Admin_Signup">
+                <ScalarProperty Name="Admin_ID" ColumnName="Admin_ID" />
+                <ScalarProperty Name="Admin_Name" ColumnName="Admin_Name" />
+                <ScalarProperty Name="Admin_Designation" ColumnName="Admin_Designation" />
+                <ScalarProperty Name="Admin_Employee_ID" ColumnName="Admin_Employee_ID" />
+                <ScalarProperty Name="Admin_Contact_Number" ColumnName="Admin_Contact_Number" />
+                <ScalarProperty Name="Admin_Address" ColumnName="Admin_Address" />
+                <ScalarProperty Name="User_CategoryId" ColumnName="User_CategoryId" />
+                <ScalarProperty Name="Admin_Password" ColumnName="Admin_Password" />
+                <ScalarProperty Name="Creation_By" ColumnName="Creation_By" />
+                <ScalarProperty Name="Creation_Date" ColumnName="Creation_Date" />
+                <ScalarProperty Name="Updated_By" ColumnName="Updated_By" />
+                <ScalarProperty Name="Updated_Date" ColumnName="Updated_Date" />
+                <ScalarProperty Name="Is_Active" ColumnName="Is_Active" />
+                <ScalarProperty Name="Ip" ColumnName="Ip" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Bookmarks">
+            <EntityTypeMapping TypeName="Renocan_DbModel.Bookmark">
+              <MappingFragment StoreEntitySet="Bookmarks">
+                <ScalarProperty Name="Bookmark_ID" ColumnName="Bookmark_ID" />
+                <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+                <ScalarProperty Name="User_TypeId" ColumnName="User_TypeId" />
+                <ScalarProperty Name="Company_ID" ColumnName="Company_ID" />
+                <ScalarProperty Name="Creation_By" ColumnName="Creation_By" />
+                <ScalarProperty Name="Creation_Date" ColumnName="Creation_Date" />
+                <ScalarProperty Name="Updated_By" ColumnName="Updated_By" />
+                <ScalarProperty Name="Updated_Date" ColumnName="Updated_Date" />
+                <ScalarProperty Name="Is_Active" ColumnName="Is_Active" />
+                <ScalarProperty Name="Ip" ColumnName="Ip" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Client_Signup">
+            <EntityTypeMapping TypeName="Renocan_DbModel.Client_Signup">
+              <MappingFragment StoreEntitySet="Client_Signup">
+                <ScalarProperty Name="Client_ID" ColumnName="Client_ID" />
+                <ScalarProperty Name="Full_Name" ColumnName="Full_Name" />
+                <ScalarProperty Name="First_Name" ColumnName="First_Name" />
+                <ScalarProperty Name="Last_Name" ColumnName="Last_Name" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="IsNewsletter" ColumnName="IsNewsletter" />
+                <ScalarProperty Name="Creation_By" ColumnName="Creation_By" />
+                <ScalarProperty Name="Creation_Date" ColumnName="Creation_Date" />
+                <ScalarProperty Name="Updated_By" ColumnName="Updated_By" />
+                <ScalarProperty Name="Updated_Date" ColumnName="Updated_Date" />
+                <ScalarProperty Name="Is_Active" ColumnName="Is_Active" />
+                <ScalarProperty Name="Ip" ColumnName="Ip" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Company_Service_Location">
+            <EntityTypeMapping TypeName="Renocan_DbModel.Company_Service_Location">
+              <MappingFragment StoreEntitySet="Company_Service_Location">
+                <ScalarProperty Name="Company_Service_Location_Id" ColumnName="Company_Service_Location_Id" />
+                <ScalarProperty Name="Company_ID" ColumnName="Company_ID" />
+                <ScalarProperty Name="Location_ID" ColumnName="Location_ID" />
+                <ScalarProperty Name="Creation_By" ColumnName="Creation_By" />
+                <ScalarProperty Name="Creation_Date" ColumnName="Creation_Date" />
+                <ScalarProperty Name="Updated_By" ColumnName="Updated_By" />
+                <ScalarProperty Name="Updated_Date" ColumnName="Updated_Date" />
+                <ScalarProperty Name="Is_Active" ColumnName="Is_Active" />
+                <ScalarProperty Name="Ip" ColumnName="Ip" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Image_Gallary">
+            <EntityTypeMapping TypeName="Renocan_DbModel.Image_Gallary">
+              <MappingFragment StoreEntitySet="Image_Gallary">
+                <ScalarProperty Name="Image_ID" ColumnName="Image_ID" />
+                <ScalarProperty Name="Image_Name" ColumnName="Image_Name" />
+                <ScalarProperty Name="Image_Path" ColumnName="Image_Path" />
+                <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+                <ScalarProperty Name="Image_Type_ID" ColumnName="Image_Type_ID" />
+                <ScalarProperty Name="User_Typeid" ColumnName="User_Typeid" />
+                <ScalarProperty Name="Creation_By" ColumnName="Creation_By" />
+                <ScalarProperty Name="Creation_Date" ColumnName="Creation_Date" />
+                <ScalarProperty Name="Updated_By" ColumnName="Updated_By" />
+                <ScalarProperty Name="Updated_Date" ColumnName="Updated_Date" />
+                <ScalarProperty Name="Is_Active" ColumnName="Is_Active" />
+                <ScalarProperty Name="Ip" ColumnName="Ip" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Image_Type">
+            <EntityTypeMapping TypeName="Renocan_DbModel.Image_Type">
+              <MappingFragment StoreEntitySet="Image_Type">
+                <ScalarProperty Name="Image_Type_ID" ColumnName="Image_Type_ID" />
+                <ScalarProperty Name="Image_Type_Name" ColumnName="Image_Type_Name" />
+                <ScalarProperty Name="Creation_By" ColumnName="Creation_By" />
+                <ScalarProperty Name="Creation_Date" ColumnName="Creation_Date" />
+                <ScalarProperty Name="Updated_By" ColumnName="Updated_By" />
+                <ScalarProperty Name="Updated_Date" ColumnName="Updated_Date" />
+                <ScalarProperty Name="Is_Active" ColumnName="Is_Active" />
+                <ScalarProperty Name="Ip" ColumnName="Ip" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Locations">
+            <EntityTypeMapping TypeName="Renocan_DbModel.Location">
+              <MappingFragment StoreEntitySet="Location">
+                <ScalarProperty Name="Location_ID" ColumnName="Location_ID" />
+                <ScalarProperty Name="Location_Name" ColumnName="Location_Name" />
+                <ScalarProperty Name="Postal_Code" ColumnName="Postal_Code" />
+                <ScalarProperty Name="Creation_By" ColumnName="Creation_By" />
+                <ScalarProperty Name="Creation_Date" ColumnName="Creation_Date" />
+                <ScalarProperty Name="Updated_By" ColumnName="Updated_By" />
+                <ScalarProperty Name="Updated_Date" ColumnName="Updated_Date" />
+                <ScalarProperty Name="Is_Active" ColumnName="Is_Active" />
+                <ScalarProperty Name="Ip" ColumnName="Ip" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Registration_Company">
+            <EntityTypeMapping TypeName="Renocan_DbModel.Registration_Company">
+              <MappingFragment StoreEntitySet="Registration_Company">
+                <ScalarProperty Name="Company_ID" ColumnName="Company_ID" />
+                <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+                <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Owner_First_Name" ColumnName="Owner_First_Name" />
+                <ScalarProperty Name="Owner_Last_Name" ColumnName="Owner_Last_Name" />
+                <ScalarProperty Name="IsAggrement" ColumnName="IsAggrement" />
+                <ScalarProperty Name="Is_Paid" ColumnName="Is_Paid" />
+                <ScalarProperty Name="Website_Add" ColumnName="Website_Add" />
+                <ScalarProperty Name="Bussiness_Description" ColumnName="Bussiness_Description" />
+                <ScalarProperty Name="Profile_Information" ColumnName="Profile_Information" />
+                <ScalarProperty Name="Products" ColumnName="Products" />
+                <ScalarProperty Name="Services" ColumnName="Services" />
+                <ScalarProperty Name="Brands" ColumnName="Brands" />
+                <ScalarProperty Name="Specialities" ColumnName="Specialities" />
+                <ScalarProperty Name="Year_Established" ColumnName="Year_Established" />
+                <ScalarProperty Name="Return_Policy_URL" ColumnName="Return_Policy_URL" />
+                <ScalarProperty Name="Payment_Method_URL" ColumnName="Payment_Method_URL" />
+                <ScalarProperty Name="Licences_URL" ColumnName="Licences_URL" />
+                <ScalarProperty Name="Insurance_URL" ColumnName="Insurance_URL" />
+                <ScalarProperty Name="Certificates_URL" ColumnName="Certificates_URL" />
+                <ScalarProperty Name="Pricing" ColumnName="Pricing" />
+                <ScalarProperty Name="Contract_Based" ColumnName="Contract_Based" />
+                <ScalarProperty Name="Warranty" ColumnName="Warranty" />
+                <ScalarProperty Name="Creation_By" ColumnName="Creation_By" />
+                <ScalarProperty Name="Creation_Date" ColumnName="Creation_Date" />
+                <ScalarProperty Name="Updated_By" ColumnName="Updated_By" />
+                <ScalarProperty Name="Updated_Date" ColumnName="Updated_Date" />
+                <ScalarProperty Name="Is_Active" ColumnName="Is_Active" />
+                <ScalarProperty Name="Ip" ColumnName="Ip" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Request_Review_History">
+            <EntityTypeMapping TypeName="Renocan_DbModel.Request_Review_History">
+              <MappingFragment StoreEntitySet="Request_Review_History">
+                <ScalarProperty Name="Request_Review_History_ID" ColumnName="Request_Review_History_ID" />
+                <ScalarProperty Name="Review_ID" ColumnName="Review_ID" />
+                <ScalarProperty Name="Job_Description" ColumnName="Job_Description" />
+                <ScalarProperty Name="Client_Phone" ColumnName="Client_Phone" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="IsEmailSent" ColumnName="IsEmailSent" />
+                <ScalarProperty Name="IsSmsSent" ColumnName="IsSmsSent" />
+                <ScalarProperty Name="Creation_By" ColumnName="Creation_By" />
+                <ScalarProperty Name="Creation_Date" ColumnName="Creation_Date" />
+                <ScalarProperty Name="Updated_By" ColumnName="Updated_By" />
+                <ScalarProperty Name="Updated_Date" ColumnName="Updated_Date" />
+                <ScalarProperty Name="Is_Active" ColumnName="Is_Active" />
+                <ScalarProperty Name="Ip" ColumnName="Ip" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Reviews">
+            <EntityTypeMapping TypeName="Renocan_DbModel.Review">
+              <MappingFragment StoreEntitySet="Reviews">
+                <ScalarProperty Name="Review_ID" ColumnName="Review_ID" />
+                <ScalarProperty Name="Service_Request_ID" ColumnName="Service_Request_ID" />
+                <ScalarProperty Name="ReviewedBy" ColumnName="ReviewedBy" />
+                <ScalarProperty Name="ReviewedDate" ColumnName="ReviewedDate" />
+                <ScalarProperty Name="Service_Review_Status_ID" ColumnName="Service_Review_Status_ID" />
+                <ScalarProperty Name="Review_Title" ColumnName="Review_Title" />
+                <ScalarProperty Name="Approximate_Cost" ColumnName="Approximate_Cost" />
+                <ScalarProperty Name="Review_Details" ColumnName="Review_Details" />
+                <ScalarProperty Name="Review_Rating" ColumnName="Review_Rating" />
+                <ScalarProperty Name="Review_Time" ColumnName="Review_Time" />
+                <ScalarProperty Name="IsAnonymous" ColumnName="IsAnonymous" />
+                <ScalarProperty Name="Creation_By" ColumnName="Creation_By" />
+                <ScalarProperty Name="Creation_Date" ColumnName="Creation_Date" />
+                <ScalarProperty Name="Updated_By" ColumnName="Updated_By" />
+                <ScalarProperty Name="Updated_Date" ColumnName="Updated_Date" />
+                <ScalarProperty Name="Is_Active" ColumnName="Is_Active" />
+                <ScalarProperty Name="Ip" ColumnName="Ip" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Scoreboards">
+            <EntityTypeMapping TypeName="Renocan_DbModel.Scoreboard">
+              <MappingFragment StoreEntitySet="Scoreboard">
+                <ScalarProperty Name="Scoreboard_ID" ColumnName="Scoreboard_ID" />
+                <ScalarProperty Name="Visitor_ID" ColumnName="Visitor_ID" />
+                <ScalarProperty Name="Visitor_Name" ColumnName="Visitor_Name" />
+                <ScalarProperty Name="Visitor_Ip" ColumnName="Visitor_Ip" />
+                <ScalarProperty Name="Leads" ColumnName="Leads" />
+                <ScalarProperty Name="Company_ID" ColumnName="Company_ID" />
+                <ScalarProperty Name="Creation_By" ColumnName="Creation_By" />
+                <ScalarProperty Name="Creation_Date" ColumnName="Creation_Date" />
+                <ScalarProperty Name="Updated_By" ColumnName="Updated_By" />
+                <ScalarProperty Name="Updated_Date" ColumnName="Updated_Date" />
+                <ScalarProperty Name="Is_Active" ColumnName="Is_Active" />
+                <ScalarProperty Name="Ip" ColumnName="Ip" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Service_Category">
+            <EntityTypeMapping TypeName="Renocan_DbModel.Service_Category">
+              <MappingFragment StoreEntitySet="Service_Category">
+                <ScalarProperty Name="Category_ID" ColumnName="Category_ID" />
+                <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+                <ScalarProperty Name="Creation_By" ColumnName="Creation_By" />
+                <ScalarProperty Name="Creation_Date" ColumnName="Creation_Date" />
+                <ScalarProperty Name="Updated_By" ColumnName="Updated_By" />
+                <ScalarProperty Name="Updated_Date" ColumnName="Updated_Date" />
+                <ScalarProperty Name="Is_Active" ColumnName="Is_Active" />
+                <ScalarProperty Name="Ip" ColumnName="Ip" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Service_Request">
+            <EntityTypeMapping TypeName="Renocan_DbModel.Service_Request">
+              <MappingFragment StoreEntitySet="Service_Request">
+                <ScalarProperty Name="Service_Request_ID" ColumnName="Service_Request_ID" />
+                <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+                <ScalarProperty Name="User_TypeId" ColumnName="User_TypeId" />
+                <ScalarProperty Name="Company_Category_ID" ColumnName="Company_Category_ID" />
+                <ScalarProperty Name="Service_Request_Status_ID" ColumnName="Service_Request_Status_ID" />
+                <ScalarProperty Name="Request_Date" ColumnName="Request_Date" />
+                <ScalarProperty Name="Request_Reply" ColumnName="Request_Reply" />
+                <ScalarProperty Name="Problem_description" ColumnName="Problem_description" />
+                <ScalarProperty Name="Kind_of_Location" ColumnName="Kind_of_Location" />
+                <ScalarProperty Name="Postal_Code" ColumnName="Postal_Code" />
+                <ScalarProperty Name="Creation_By" ColumnName="Creation_By" />
+                <ScalarProperty Name="Creation_Date" ColumnName="Creation_Date" />
+                <ScalarProperty Name="Updated_By" ColumnName="Updated_By" />
+                <ScalarProperty Name="Updated_Date" ColumnName="Updated_Date" />
+                <ScalarProperty Name="Is_Active" ColumnName="Is_Active" />
+                <ScalarProperty Name="Ip" ColumnName="Ip" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Service_Request_Status">
+            <EntityTypeMapping TypeName="Renocan_DbModel.Service_Request_Status">
+              <MappingFragment StoreEntitySet="Service_Request_Status">
+                <ScalarProperty Name="Service_Request_Status_ID" ColumnName="Service_Request_Status_ID" />
+                <ScalarProperty Name="Service_Request_Status_Name" ColumnName="Service_Request_Status_Name" />
+                <ScalarProperty Name="Creation_By" ColumnName="Creation_By" />
+                <ScalarProperty Name="Creation_Date" ColumnName="Creation_Date" />
+                <ScalarProperty Name="Updated_By" ColumnName="Updated_By" />
+                <ScalarProperty Name="Updated_Date" ColumnName="Updated_Date" />
+                <ScalarProperty Name="Is_Active" ColumnName="Is_Active" />
+                <ScalarProperty Name="Ip" ColumnName="Ip" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Service_Review_Status">
+            <EntityTypeMapping TypeName="Renocan_DbModel.Service_Review_Status">
+              <MappingFragment StoreEntitySet="Service_Review_Status">
+                <ScalarProperty Name="Service_Review_Status_ID" ColumnName="Service_Review_Status_ID" />
+                <ScalarProperty Name="Service_Review_Status1" ColumnName="Service_Review_Status" />
+                <ScalarProperty Name="Creation_By" ColumnName="Creation_By" />
+                <ScalarProperty Name="Creation_Date" ColumnName="Creation_Date" />
+                <ScalarProperty Name="Updated_By" ColumnName="Updated_By" />
+                <ScalarProperty Name="Updated_Date" ColumnName="Updated_Date" />
+                <ScalarProperty Name="Is_Active" ColumnName="Is_Active" />
+                <ScalarProperty Name="Ip" ColumnName="Ip" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="User_Type">
+            <EntityTypeMapping TypeName="Renocan_DbModel.User_Type">
+              <MappingFragment StoreEntitySet="User_Type">
+                <ScalarProperty Name="User_TypeId" ColumnName="User_TypeId" />
+                <ScalarProperty Name="User_TypeName" ColumnName="User_TypeName" />
+                <ScalarProperty Name="Creation_By" ColumnName="Creation_By" />
+                <ScalarProperty Name="Creation_Date" ColumnName="Creation_Date" />
+                <ScalarProperty Name="Updated_By" ColumnName="Updated_By" />
+                <ScalarProperty Name="Updated_Date" ColumnName="Updated_Date" />
+                <ScalarProperty Name="Is_Active" ColumnName="Is_Active" />
+                <ScalarProperty Name="Ip" ColumnName="Ip" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VIisitor_Log">
+            <EntityTypeMapping TypeName="Renocan_DbModel.VIisitor_Log">
+              <MappingFragment StoreEntitySet="VIisitor_Log">
+                <ScalarProperty Name="User_Log_ID" ColumnName="User_Log_ID" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Time_In" ColumnName="Time_In" />
+                <ScalarProperty Name="Time_Out" ColumnName="Time_Out" />
+                <ScalarProperty Name="Company_ID" ColumnName="Company_ID" />
+                <ScalarProperty Name="Creation_By" ColumnName="Creation_By" />
+                <ScalarProperty Name="Creation_Date" ColumnName="Creation_Date" />
+                <ScalarProperty Name="Updated_By" ColumnName="Updated_By" />
+                <ScalarProperty Name="Updated_Date" ColumnName="Updated_Date" />
+                <ScalarProperty Name="Is_Active" ColumnName="Is_Active" />
+                <ScalarProperty Name="Ip" ColumnName="Ip" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
