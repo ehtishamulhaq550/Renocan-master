@@ -26,14 +26,14 @@ namespace Renocan.Controllers.Api
             return context.Company_Service_Location.ToList().Select(Mapper.Map<Company_Service_Location, Company_Service_LocationDto>);
         }
 
-        public BookmarkDto GetCompany_Service_Location(int id)
+        public IHttpActionResult GetCompany_Service_Location(int id)
         {
             var a = context.Company_Service_Location.SingleOrDefault(c => c.Company_Service_Location_Id == id);
             if (a == null)
                 throw new HttpResponseException(HttpStatusCode.NotFound);
 
-            return Mapper.Map<Company_Service_Location,Company_Service_LocationDto>(a);
-
+            return Ok(Mapper.Map<Company_Service_Location, Company_Service_LocationDto>(a));
+            
 
         }
 
@@ -59,7 +59,7 @@ namespace Renocan.Controllers.Api
             var admin = context.Company_Service_Location.SingleOrDefault(c => c.Company_Service_Location_Id == id);
             if (admin == null)
                 throw new HttpResponseException(HttpStatusCode.NotFound);
-            Mapper.Map(Company_Service_LocationDto, admin);
+            Mapper.Map(company_Service_LocationDto, admin);
             context.SaveChanges();
 
         }

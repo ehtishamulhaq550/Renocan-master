@@ -10,59 +10,56 @@ using System.Web.Http;
 
 namespace Renocan.Controllers.Api
 {
-    public class ActivityController : ApiController
+    public class Image_GalleryController : ApiController
     {
-
-
         private Renocan_DbContext context;
 
-        public ActivityController()
+        public Image_GalleryController()
         {
             context = new Renocan_DbContext();
         }
 
-        public IEnumerable<ActivityDto> Get()
+        public IEnumerable<Image_GalleryDto> Get()
         {
-            return context.Activities.ToList().Select(Mapper.Map<Activity, ActivityDto>);
+            return context.Image_Gallary.ToList().Select(Mapper.Map<Image_Gallary, Image_GalleryDto>);
         }
 
-        public ActivityDto GetActivity(int id)
+        public Image_GalleryDto GetImage_Gallery(int id)
         {
-            var a = context.Activities.SingleOrDefault(c => c.Activity_ID == id);
+            var a = context.Image_Gallary.SingleOrDefault(c => c.Image_ID == id);
             if (a == null)
                 throw new HttpResponseException(HttpStatusCode.NotFound);
-            return Mapper.Map<Activity, ActivityDto>(a);
+            return Mapper.Map<Image_Gallary, Image_GalleryDto>(a);
 
         }
 
 
         [HttpPost]
-        public ActivityDto CreateActivity(ActivityDto a)
+        public Image_GalleryDto CreateBookmark(Image_GalleryDto a)
         {
             if (!ModelState.IsValid)
                 throw new HttpResponseException(HttpStatusCode.BadRequest);
 
-            var abc = Mapper.Map<ActivityDto, Activity>(a);
-            context.Activities.Add(abc);
+            var abc = Mapper.Map<Image_GalleryDto, Image_Gallary>(a);
+            context.Image_Gallary.Add(abc);
             context.SaveChanges();
             return a;
         }
 
         [HttpPut]
-        public void UpdateActivity(int id, ActivityDto activityDto)
+        public void UpdateImage_Gallery(int id, Image_GalleryDto image_GalleryDto)
         {
             if (!ModelState.IsValid)
                 throw new HttpResponseException(HttpStatusCode.BadRequest);
 
-            var admin = context.Activities.SingleOrDefault(c => c.Activity_ID == id);
+            var admin = context.Image_Gallary.SingleOrDefault(c => c.Image_ID == id);
             if (admin == null)
                 throw new HttpResponseException(HttpStatusCode.NotFound);
-            Mapper.Map(activityDto, admin);
+            Mapper.Map(image_GalleryDto, admin);
             context.SaveChanges();
 
         }
 
     }
-
 }
 

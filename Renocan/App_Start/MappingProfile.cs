@@ -31,6 +31,10 @@ namespace Renocan.App_Start
 
             CreateMap<Company_Service_LocationDto, Company_Service_Location>().ForMember(m => m.Company_Service_Location_Id, opt => opt.Ignore());
 
+            CreateMap<Image_Gallary, Image_GalleryDto>();
+
+            CreateMap<Image_GalleryDto, Image_Gallary>().ForMember(m => m.Image_ID, opt => opt.Ignore());
+
         }
     }
 }

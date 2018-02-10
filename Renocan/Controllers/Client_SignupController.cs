@@ -37,6 +37,7 @@ namespace Renocan.Controllers
             return context.Client_Signup.ToList().Select(Mapper.Map<Client_Signup, Client_SignupDto>);
         }
         
+
         
 
 

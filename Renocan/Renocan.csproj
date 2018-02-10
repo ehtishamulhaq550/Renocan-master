@@ -200,8 +200,8 @@
     <Compile Include="Controllers\Api\ActivityController.cs" />
     <Compile Include="Controllers\Api\Admin_SignupController.cs" />
     <Compile Include="Controllers\Api\BookmarkController.cs" />
-    <Compile Include="Controllers\Api\Client_SignupController.cs" />
     <Compile Include="Controllers\Api\Company_Service_LocationController.cs" />
+    <Compile Include="Controllers\Api\Image_GalleryController.cs" />
     <Compile Include="Controllers\Client_SignupController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
@@ -210,6 +210,7 @@
     <Compile Include="Dtos\BookmarkDto.cs" />
     <Compile Include="Dtos\Client_SignupDto.cs" />
     <Compile Include="Dtos\Company_Service_LocationDto.cs" />
+    <Compile Include="Dtos\Image_GalleryDto.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
